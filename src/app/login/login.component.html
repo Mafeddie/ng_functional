@@ -1,0 +1,51 @@
+<div class="container">
+  <div class=" row">
+    <mat-card class="example-card">
+
+      <div class="login-header">
+        <mat-card-title style="color: #172B4D;">E-commerce</mat-card-title>
+        <mat-card-subtitle>Welcome back! Please login to continue.</mat-card-subtitle>
+      </div>
+
+      <div>
+        <form class="example-form">
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Email</mat-label>
+            <!-- { <mat-icon matPrefix>mail outline</mat-icon>&nbsp; -->
+            <input type="email" class="email" matInput placeholder="Email">
+            <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+              Please enter a valid email address
+            </mat-error>
+            <mat-error *ngIf="emailFormControl.hasError('required')">
+              Email is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+
+          <br>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>password</mat-label>
+            <mat-icon matPrefix>lock</mat-icon>&nbsp;
+            <input type="password" class="password" placeholder="Password" matInput>
+
+          </mat-form-field>
+          <section class="example-section">
+            <mat-checkbox class="example-margin">Remember Me</mat-checkbox>
+
+            <a href="#" class="forgot">Forgot Password</a>
+          </section>
+
+          <!--  -->
+
+
+        </form>
+      </div>
+
+
+
+      <button mat-flat-button color="primary" mat-button>Sign In</button>
+
+    </mat-card>
+    <div class="last-component"><Span style="color: white;">New to Ecommerce?</Span><a style="color: #11CDEF;">Sign
+        Up</a></div>
+  </div>
+</div>
