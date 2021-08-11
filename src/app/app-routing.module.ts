@@ -8,11 +8,12 @@ import { MinicardComponent } from './minicard/minicard.component';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'login', component: LoginComponent},
+  { path: '', redirectTo: '/home', pathMatch: 'full' },  
+  { path: '', component: LoginComponent},
   {path:'add-product', component: AddProductComponent},
   {path : 'add-category', component:AddCategoryComponent },
-  {path : 'minicard', component:MinicardComponent}
+  {path : 'minicard', component:MinicardComponent},
+  { path: 'pdf', loadChildren: () => import('./pdf/pdf.module').then(m => m.PdfModule) }
 
 ];
 
