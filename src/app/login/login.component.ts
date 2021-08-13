@@ -12,12 +12,9 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./login.component.css']
 })
 
-
-
 export class LoginComponent implements OnInit {
 
   readonly URL= 'https://ecommerce-apis.herokuapp.com/auth/login/';
-
 
   emailFormControl = new FormControl('', [
     Validators.required,
@@ -27,29 +24,31 @@ export class LoginComponent implements OnInit {
     Validators.minLength(6)
     
   ]);
+    constructor( ) {
+      
+      // private http :HttpClient
+      //   const data : user={
+      //     email: "admin@gmail.com",
+      //     password : "admin"
+    
+      //   }
+      //   this.payload = this.http.post(this.URL, data).toPromise().then( res=>{
+
+      //     console.log(res);
+      //   )}
+        
+
+
+
+      
   
+      }
+      ngOnInit(): void {
 
-
-
-
-
-
-  constructor(private http :HttpClient ) { }
-
-  ngOnInit(): void {
-  
-  }
-
-  payload : Observable<any>;
-  
-  AuthUser(){
-    const data : user={
-      email: "admin@gmail.com",
-      password : "admin"
-
+      }
+   
     }
-    this.payload = this.http.post(this.URL, data);
-  }
 
 
-}
+
+

@@ -9,7 +9,7 @@ import { AddCategoryComponent } from './add-category/add-category.component';
 import { AddProductComponent } from './add-product/add-product.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ProductsComponent } from './products/products.component';
+
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
@@ -39,7 +39,7 @@ import { MatInputModule } from '@angular/material/input';
     MinicardComponent,
     AddCategoryComponent,
     AddProductComponent,
-    ProductsComponent,
+    
     NavComponent
   ],
   imports: [
