@@ -1,4 +1,4 @@
-<mat-sidenav-container class="sidenav-container">
+<mat-sidenav-container class="sidenav-container" style="background: linear-gradient(0deg,#8898AA 50%,#172B4D 50%  );">
   <mat-sidenav #drawer class="sidenav" fixedInViewport
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
@@ -11,7 +11,7 @@
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <mat-toolbar color="primary">
+    <mat-toolbar style="color: #172B4D;">
       <button
         type="button"
         aria-label="Toggle sidenav"
@@ -22,21 +22,46 @@
       </button>
 
       <span></span>
+      <mat-toolbar-row>
       <div class="notification">
-        <button><mat-icon>notifications</mat-icon></button>
-        <button> <mat-icon>help</mat-icon></button>
-        <div mat-card-avatar class="profile-image"></div>
-        <h3>John Doe</h3>
+        <!-- <button></button> -->
+        <mat-icon>notifications</mat-icon>
+        <span class="example-spacer"></span>
+         <mat-icon>help</mat-icon>
+         <span class="example-spacer"></span>
+        <img mat-card-avatar class="profile-image " src="../../assets/image/test.jpeg"> 
+        <span class="example-spacer"></span>
+        <p style="font-size: small;">John Doe</p>
   
       </div>
+    </mat-toolbar-row>
+  <mat-toolbar-row>
+
+
+  </mat-toolbar-row>
     </mat-toolbar>
     <!-- Add Content Here -->
   
-    <main style="background: linear-gradient(0deg,#8898AA 50%,#172B4D 50%  );">
+    <main >
       <router-outlet>
         <app-minicard>
 
         </app-minicard>
+        
+        <app-login>
+
+        </app-login>
+        <br>
+        <app-add-category>
+
+        </app-add-category>
+        <br>
+        <!-- <app-add-product>
+
+        </app-add-product> -->
+        <br>
+
+        
       </router-outlet>
     </main>
 

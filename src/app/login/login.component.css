@@ -1,24 +1,25 @@
 .row {
     
-    width: 50%;
-   padding: 30px;
- margin-left: auto;
- margin-right: auto;
+    width: 35%;
+   padding: 120px;
+   margin-left: auto;
+   margin-right: auto;
    
   }
   .container{
     background: linear-gradient(170deg,#11CDEF 50%,#172B4D 50%  );
     height: 100%;
     justify-content: center;
+    
   }
   .password, .email{
     width: 100%;
-    height: 5vh;
+    /* height: 5vh; */
 }
 .forgot{
   float: right;
 }
 .last-component{
   align-items: center;
-  margin: auto;
+  margin-left: auto;
 }

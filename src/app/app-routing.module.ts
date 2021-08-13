@@ -5,11 +5,13 @@ import { LoginComponent } from './login/login.component';
 import {AddProductComponent} from './add-product/add-product.component';
 import {AddCategoryComponent} from './add-category/add-category.component';
 import { MinicardComponent } from './minicard/minicard.component';
+import { NavComponent } from './nav/nav.component';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },  
-  { path: '', component: LoginComponent},
+
+  // {path: '' , component : NavComponent },
+  { path: 'login', component: LoginComponent},
   {path:'add-product', component: AddProductComponent},
   {path : 'add-category', component:AddCategoryComponent },
   {path : 'minicard', component:MinicardComponent},
