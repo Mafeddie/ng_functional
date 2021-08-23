@@ -10,10 +10,7 @@ import { NavComponent } from './nav/nav.component';
 
 const routes: Routes = [
 
-  {path: '' , 
-  redirectTo : 'nav ',
-  pathMatch : 'full'
-   },
+  {path: '', redirectTo: 'login', pathMatch: 'full'},
   { path: 'login', component: LoginComponent},
   {path : 'nav', component : NavComponent},
   {path:'add-product', component: AddProductComponent},

@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 
-import { auth } from "./auth";
+
 import { User } from './user';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { LoginService } from './login.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -15,23 +16,17 @@ import { LoginService } from './login.service';
 
 export class LoginComponent implements OnInit {
 
-  readonly URL = 'https://ecommerce-apis.herokuapp.com/auth/login/';
 
-  userModel = new User('edward@proton.com', 'passwordndogo');
+
+  userModel = new User('', '');
   errorMsg = '';
-  token = '';
+  // token = '';
 
-  emailFormControl = new FormControl('', [
-    Validators.required,
-    Validators.email,
-  ]);
-  passwordFormControl = new FormControl('', [
-    Validators.minLength(6)
 
-  ]);
   constructor(
     private _loginService: LoginService,
-    private _http: HttpClient
+    private _http: HttpClient,
+    private _router: Router
   ) { }
 
   onSubmit() {
@@ -40,11 +35,19 @@ export class LoginComponent implements OnInit {
       .subscribe(
         response => {
           // console.log('Login Successful', response.access);
-          this.token = response.access;
+          // this.token = response.access;
           localStorage.setItem('access', response.access);
 
 
           console.log("Localstorage variable = " + localStorage.getItem('access'));
+
+          if (localStorage.getItem('access') === null){
+
+          }else{
+            this._router.navigate(['./nav']);
+          }
+
+          
         },
         error => this.errorMsg = error.statusText
       )

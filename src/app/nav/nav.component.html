@@ -19,7 +19,7 @@
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar>
-      <div class="toolbar" style="color: #172B4D;">
+
 
 
         <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
@@ -28,11 +28,11 @@
         </button>
 
         <span></span>
-        <mat-toolbar-row>
+       
 
           <div class="search">
 
-            <mat-form-field >
+            <mat-form-field>
               <mat-icon matPrefix>search</mat-icon> &nbsp;&nbsp; &nbsp;&nbsp;
               <input type="search" matInput placeholder="Search" style="margin-left: 10px;" />
             </mat-form-field>
@@ -51,23 +51,24 @@
             <p style="font-size: small; color: white;">John Doe</p>
 
           </div>
-        </mat-toolbar-row>
-        <mat-toolbar-row>
+        
 
-          <span>Breadcrumbs</span>
-        </mat-toolbar-row>
-      </div>
+     
+    </mat-toolbar>
+    <mat-toolbar>
+
+      <span>Breadcrumbs</span>
     </mat-toolbar>
     <!-- Add Content Here -->
 
     <main>
-      <router-outlet>
-        <app-minicard>
 
-        </app-minicard>
+      <app-minicard>
+
+      </app-minicard>
 
 
-      </router-outlet>
+
     </main>
 
   </mat-sidenav-content>
