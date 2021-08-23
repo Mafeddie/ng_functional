@@ -1,13 +1,19 @@
-<div class="prod-container"  >
+<div class="prod-container" >
 
-<form class="form-container"   >
-  <mat-card class="example-card" fxFlex=25% fxFlexFill >
+  <div class="cardcontent">
 
+  
+<form class="form-container"  fxFlex=50% fxFlexFill   >
+
+
+
+  <mat-card class="example-card">
+    <div class="header" style="display: flex; flex-direction: row; ">
     <mat-card-title style="font-size: medium;">New Product</mat-card-title>
 
     <button mat-stroked-button style="float: right;" color="primary">Add Product</button>
 
-
+  </div>
     <mat-divider></mat-divider>
 
     <div class="bottom-section" fxLayout="column"  fxLayoutAlign="space-between">
@@ -32,6 +38,7 @@
         <input type="text" formcontrolName="Category" matInput required>
 
       </mat-form-field>
+      
       <mat-form-field class="full-width" appearance="outline">
         <mat-label>
           Description
@@ -50,4 +57,7 @@
     </div>
   </mat-card>
 </form>
+
 </div>
+</div>
+

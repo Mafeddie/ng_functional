@@ -1,67 +1,72 @@
 <mat-sidenav-container class="sidenav-container" style="background: linear-gradient(0deg,#8898AA 50%,#172B4D 50%  );">
-  <mat-sidenav #drawer class="sidenav" fixedInViewport
-      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-      [mode]="(isHandset$ | async) ? 'over' : 'side'"
-      [opened]="(isHandset$ | async) === false">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
     <mat-toolbar>E-commerce</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item href="/">Home</a>
-      <a mat-list-item href="/products">Products</a>
-      <a mat-list-item href="/categories">Categories</a>
+      <a mat-list-item href="/">
+        <mat-icon matPrefix>home</mat-icon>&nbsp;
+        Home
+      </a>
+      <a mat-list-item href="/products" routerlink="/products">
+        <mat-icon matPrefix>inventory_2</mat-icon>&nbsp;
+        Products
+      </a>
+      <a mat-list-item href="/categories" routerlink="/categories">
+        <mat-icon matPrefix>description</mat-icon>&nbsp;
+        Categories
+      </a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <mat-toolbar style="color: #172B4D;">
-      <button
-        type="button"
-        aria-label="Toggle sidenav"
-        mat-icon-button
-        (click)="drawer.toggle()"
-        *ngIf="isHandset$ | async">
-        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-      </button>
+    <mat-toolbar>
+      <div class="toolbar" style="color: #172B4D;">
 
-      <span></span>
-      <mat-toolbar-row>
-      <div class="notification">
-        <!-- <button></button> -->
-        <mat-icon>notifications</mat-icon>
-        <span class="example-spacer"></span>
-         <mat-icon>help</mat-icon>
-         <span class="example-spacer"></span>
-        <img mat-card-avatar class="profile-image " src="../../assets/image/test.jpeg"> 
-        <span class="example-spacer"></span>
-        <p style="font-size: small;">John Doe</p>
-  
+
+        <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
+          *ngIf="isHandset$ | async">
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+
+        <span></span>
+        <mat-toolbar-row>
+
+          <div class="search">
+
+            <mat-form-field >
+              <mat-icon matPrefix>search</mat-icon> &nbsp;&nbsp; &nbsp;&nbsp;
+              <input type="search" matInput placeholder="Search" style="margin-left: 10px;" />
+            </mat-form-field>
+
+          </div>
+
+
+          <div class="notification">
+            <!-- <button></button> -->
+            <mat-icon>notifications</mat-icon>
+            <span class="example-spacer"></span>
+            <mat-icon>help</mat-icon>
+            <span class="example-spacer"></span>
+            <img mat-card-avatar class="profile-image " src="../../assets/image/test.jpeg">
+            <span class="example-spacer"></span>
+            <p style="font-size: small; color: white;">John Doe</p>
+
+          </div>
+        </mat-toolbar-row>
+        <mat-toolbar-row>
+
+          <span>Breadcrumbs</span>
+        </mat-toolbar-row>
       </div>
-    </mat-toolbar-row>
-  <mat-toolbar-row>
-
-
-  </mat-toolbar-row>
     </mat-toolbar>
     <!-- Add Content Here -->
-  
-    <main >
+
+    <main>
       <router-outlet>
         <app-minicard>
 
         </app-minicard>
-        
-        <app-login>
 
-        </app-login>
-        <br>
-        <app-add-category>
 
-        </app-add-category>
-        <br>
-        <!-- <app-add-product>
-
-        </app-add-product> -->
-        <br>
-
-        
       </router-outlet>
     </main>
 

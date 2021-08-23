@@ -8,6 +8,7 @@
 
 .sidenav .mat-toolbar {
   background: inherit;
+
 }
 
 .mat-toolbar.mat-primary {
@@ -35,3 +36,26 @@
 .example-spacer {
   flex: 0.2 1 ;
 }
+
+.search{
+  display: flex;
+  justify-content: left;
+
+  color: #172B4D;
+  background-color: white;
+  border-radius: 45px;
+  height: 60px;
+  width: 280px;
+  padding-left: 15px;
+
+}
+.mat-toolbar{
+  background-color: #172B4D;
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+}
+.notification .mat-icon{
+  color: white;
+}
+

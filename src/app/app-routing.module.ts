@@ -11,7 +11,7 @@ import { NavComponent } from './nav/nav.component';
 const routes: Routes = [
 
   {path: '' , 
-  redirectTo : 'login ',
+  redirectTo : 'nav ',
   pathMatch : 'full'
    },
   { path: 'login', component: LoginComponent},
