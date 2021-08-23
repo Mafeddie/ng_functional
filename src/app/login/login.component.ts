@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, Validators} from '@angular/forms';
+import { FormControl, Validators } from '@angular/forms';
 
 import { auth } from "./auth";
-import { user } from './auth';
+import { User } from './user';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { LoginService } from './login.service';
 
 @Component({
   selector: 'app-login',
@@ -14,40 +15,49 @@ import { HttpClient } from '@angular/common/http';
 
 export class LoginComponent implements OnInit {
 
-  readonly URL= 'https://ecommerce-apis.herokuapp.com/auth/login/';
+  readonly URL = 'https://ecommerce-apis.herokuapp.com/auth/login/';
+
+  userModel = new User('edward@proton.com', 'passwordndogo');
+  errorMsg = '';
+  token = '';
 
   emailFormControl = new FormControl('', [
     Validators.required,
     Validators.email,
   ]);
-  passwordFormControl = new FormControl('',[
+  passwordFormControl = new FormControl('', [
     Validators.minLength(6)
-    
+
   ]);
-    constructor( ) {
-      
-      // private http :HttpClient
-      //   const data : user={
-      //     email: "admin@gmail.com",
-      //     password : "admin"
-    
-      //   }
-      //   this.payload = this.http.post(this.URL, data).toPromise().then( res=>{
+  constructor(
+    private _loginService: LoginService,
+    private _http: HttpClient
+  ) { }
 
-      //     console.log(res);
-      //   )}
-        
+  onSubmit() {
+    // console.log(this.userModel);
+    this._loginService.login(this.userModel)
+      .subscribe(
+        response => {
+          // console.log('Login Successful', response.access);
+          this.token = response.access;
+          localStorage.setItem('access', response.access);
+
+
+          console.log("Localstorage variable = " + localStorage.getItem('access'));
+        },
+        error => this.errorMsg = error.statusText
+      )
+  }
+
+  ngOnInit(): void {
+
+  }
 
 
 
-      
-  
-      }
-      ngOnInit(): void {
 
-      }
-   
-    }
+}
 
 
 
